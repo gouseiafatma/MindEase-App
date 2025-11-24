@@ -1,12 +1,12 @@
 :root {
-  --bg: #f4f6fb;
-  --primary: #4f8dfb;
-  --primary-soft: #e1ecff;
-  --text: #0f172a;
-  --muted: #6b7280;
-  --card: #ffffff;
+  --bg: #eceff1;              /* soft grey background */
+  --primary: #4b8073;         /* muted teal */
+  --primary-soft: #d6e4df;    /* very light teal */
+  --text: #222526;            /* dark grey, not pure black */
+  --muted: #6d7478;           /* soft grey text */
+  --card: #ffffff;            /* card surface */
   --radius: 14px;
-  --shadow: 0 10px 28px rgba(15, 23, 42, 0.09);
+  --shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
 }
 
 * {
@@ -16,7 +16,7 @@
 body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #dfeaff, var(--bg) 55%);
+  background: linear-gradient(180deg, #f3f5f6 0%, var(--bg) 55%, #e6eaec 100%);
   color: var(--text);
 }
 
@@ -42,7 +42,7 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 16px;
-  background: linear-gradient(135deg, var(--primary), #7aa4ff);
+  background: linear-gradient(135deg, #4b8073, #769f92);
   display: grid;
   place-items: center;
   color: #fff;
@@ -83,7 +83,7 @@ body {
 
 .nav button {
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.6);
   background: rgba(255, 255, 255, 0.9);
   padding: 7px 12px;
   font-size: 13px;
@@ -91,10 +91,11 @@ body {
 }
 
 .nav button:hover {
-  background: var(--primary-soft);
+  background: #f2f5f4;
+  border-color: #c1cbc7;
 }
 
-/* MAIN */
+/* MAIN LAYOUT */
 
 .container {
   max-width: 1100px;
@@ -111,10 +112,10 @@ body {
 }
 
 .card-soft {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 14px;
   padding: 14px 16px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #dde5e2;
 }
 
 /* HERO */
@@ -142,13 +143,13 @@ body {
   margin-top: 10px;
 }
 
+/* BUTTONS */
+
 .cta-row {
   display: flex;
   gap: 10px;
   margin-top: 16px;
 }
-
-/* BUTTONS */
 
 .primary,
 .secondary,
@@ -163,11 +164,11 @@ body {
 .primary {
   background: var(--primary);
   color: #fff;
-  box-shadow: 0 10px 28px rgba(79, 141, 251, 0.35);
+  box-shadow: 0 10px 24px rgba(75, 128, 115, 0.32);
 }
 
 .secondary {
-  background: #e5edff;
+  background: #e7efec;
   color: var(--primary);
 }
 
@@ -217,10 +218,10 @@ body {
 }
 
 .mini-card {
-  background: #f9fbff;
+  background: #f7f9f8;
   border-radius: 12px;
   padding: 12px 14px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #dde4e1;
   font-size: 14px;
 }
 
@@ -240,20 +241,57 @@ body {
 
 .pill-row button {
   border-radius: 999px;
-  border: 1px solid #d1d5db;
-  background: #f9fafb;
+  border: 1px solid #d1d5d3;
+  background: #f7f8f7;
   padding: 7px 12px;
   font-size: 13px;
   cursor: pointer;
 }
 
 .pill-row button:hover {
-  background: #e5edff;
-  border-color: #c7d2fe;
+  background: #e4ece8;
+  border-color: #c6d6cf;
 }
 
 .mt {
   margin-top: 16px;
+}
+
+/* CRISIS BANNER */
+
+.crisis-banner {
+  margin-top: 14px;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 13px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid #e0e4e2;
+}
+
+.crisis-banner.low {
+  background: #e6f3ec;
+  border-color: #c4ddce;
+}
+
+.crisis-banner.medium {
+  background: #f5efe0;
+  border-color: #e5d39d;
+}
+
+.crisis-banner.high {
+  background: #f7e4e3;
+  border-color: #e4b1ad;
+}
+
+#crisis-badge {
+  font-weight: 600;
+}
+
+.crisis-note {
+  color: var(--muted);
 }
 
 /* CHAT DEMO */
@@ -275,12 +313,12 @@ body {
 
 .bubble.user {
   align-self: flex-end;
-  background: #e0edff;
+  background: #dde8e5;  /* soft teal grey */
 }
 
 .bubble.ai {
   align-self: flex-start;
-  background: #f3f4ff;
+  background: #f2f4f3;
 }
 
 /* CHART */
@@ -302,14 +340,14 @@ body {
 
 .bar {
   height: 8px;
-  background: #e5e7eb;
+  background: #e1e4e3;
   border-radius: 999px;
   overflow: hidden;
 }
 
 .fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--primary), #7aa4ff);
+  background: linear-gradient(90deg, #4b8073, #7ba499);
 }
 
 .percent {
