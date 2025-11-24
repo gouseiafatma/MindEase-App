@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindEase – Student Mental Health Prototype</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">ME</div>
+      <div>
+        <h1>MindEase</h1>
+        <p>Anonymous, affordable mental health support for NEET, JEE & college students.</p>
+      </div>
+    </div>
+    <div class="tag">Prototype · Hack for Social Cause 2026</div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <button onclick="showScreen('home')">Home</button>
+    <button onclick="showScreen('mood')">Mood Check</button>
+    <button onclick="showScreen('ai-demo')">AI Demo</button>
+    <button onclick="showScreen('sessions')">Sessions & Pricing</button>
+    <button onclick="showScreen('analytics')">AI Insights (Chart)</button>
+    <button onclick="showScreen('about')">About</button>
+    <button onclick="showScreen('contact')">Contact</button>
+  </nav>
+
+  <main class="container">
+    <!-- HOME / LANDING -->
+    <section id="home" class="screen active card">
+      <div class="hero">
+        <div>
+          <h2>Help students before they reach a breaking point.</h2>
+          <p class="lead">
+            MindEase combines AI triage + human counsellors to give Indian students real help
+            with exam pressure, parental expectations and burnout – without judgement.
+          </p>
+          <div class="cta-row">
+            <button class="primary" onclick="showScreen('mood')">Start Mood Check</button>
+            <button class="secondary" onclick="showScreen('ai-demo')">See AI chat demo</button>
+          </div>
+          <p class="sub">
+            Target users: NEET/JEE droppers, first-year college students & high-stress campuses.
+          </p>
+        </div>
+        <div class="home-side card-soft">
+          <h3>How the flow works</h3>
+          <ol>
+            <li>Mood check + problem selection.</li>
+            <li>AI generates personalised guidance.</li>
+            <li>Student can book short, anonymous micro-session with a human counsellor.</li>
+            <li>Institutes see only anonymous trends on dashboards.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOOD CHECK -->
+    <section id="mood" class="screen card">
+      <h2>Step 1 – Mood check</h2>
+      <p class="muted">
+        Select how you feel right now. No sign-up, no name – completely anonymous in the real app.
+      </p>
+      <div class="pill-row">
+        <button onclick="selectMood('Good')">🙂 Good</button>
+        <button onclick="selectMood('Okay')">😐 Okay</button>
+        <button onclick="selectMood('Stressed')">😕 Stressed</button>
+        <button onclick="selectMood('Overwhelmed')">😣 Overwhelmed</button>
+        <button onclick="selectMood('Breaking down')">😭 Breaking down</button>
+      </div>
+
+      <h3 class="mt">Step 2 – What’s bothering you?</h3>
+      <div class="pill-row">
+        <button onclick="selectIssue('NEET / JEE exam pressure')">NEET / JEE exam pressure</button>
+        <button onclick="selectIssue('Parental expectations & comparison')">Parental expectations & comparison</button>
+        <button onclick="selectIssue('Fear of failure / droppers guilt')">Fear of failure / droppers guilt</button>
+        <button onclick="selectIssue('College workload & attendance')">College workload & attendance</button>
+        <button onclick="selectIssue('Hostel loneliness & homesickness')">Hostel loneliness & homesickness</button>
+        <button onclick="selectIssue('Relationship / breakup stress')">Relationship / breakup stress</button>
+        <button onclick="selectIssue('Burnout & no motivation')">Burnout & no motivation</button>
+        <button onclick="selectIssue('Anxiety, overthinking & panic')">Anxiety, overthinking & panic</button>
+      </div>
+
+      <button class="primary mt" onclick="showScreen('guidance')">View AI-generated guidance</button>
+    </section>
+
+    <!-- GUIDANCE (AI TEXT OUTPUT) -->
+    <section id="guidance" class="screen card">
+      <h2>AI triage – what MindEase would say</h2>
+      <p id="guidance-text" class="lead">
+        Select a mood + issue first. The AI layer combines both and gives a short, India-specific response
+        that student can actually use in the next 10–15 minutes.
+      </p>
+
+      <div class="grid-3">
+        <div class="mini-card">
+          <h3>Grounding</h3>
+          <p>Breathing + grounding exercises to calm body before thinking about ranks or attempts.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Micro-plan</h3>
+          <p>Realistic plan for the next 24 hours, not the next 2 years of career.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Escalation</h3>
+          <p>When needed, student is nudged to talk to a human counsellor (anonymous mode).</p>
+        </div>
+      </div>
+
+      <button class="secondary" onclick="showScreen('ai-demo')">Open AI chat demo</button>
+      <button class="primary ghost" onclick="showScreen('sessions')">See counselling sessions</button>
+    </section>
+
+    <!-- AI CHAT DEMO -->
+    <section id="ai-demo" class="screen card">
+      <h2>AI + human support chat · demo only</h2>
+      <p class="muted">
+        This is a static demo of how a student could talk to an AI coach before or between human sessions.
+      </p>
+
+      <div class="chat">
+        <div class="bubble user">
+          I’m a NEET dropper and I feel like a failure. I can’t focus anymore.
+        </div>
+        <div class="bubble ai">
+          Thank you for trusting me with this. Feeling like a failure after a drop year is very common, but it
+          does not mean you are broken. First, tell me: since when has your focus been this low – days, weeks or months?
+        </div>
+        <div class="bubble user">
+          For the last few weeks… every time I sit to study I feel scared and guilty.
+        </div>
+        <div class="bubble ai">
+          Understood. I’ll break this into two parts: (1) a 10-minute grounding & reset for today and
+          (2) a small, realistic target for the next 24 hours so your brain doesn’t see study as punishment.
+        </div>
+        <div class="bubble ai">
+          If at any point your thoughts feel unsafe or suicidal, I’ll immediately suggest connecting you to a
+          human counsellor or local emergency support.
+        </div>
+      </div>
+
+      <p class="muted small">
+        *In the full version, AI would be fine-tuned on Indian student data and supervised by clinical experts.
+        This hackathon prototype only shows the experience, not real medical advice.
+      </p>
+
+      <button class="primary" onclick="showScreen('sessions')">Continue to counselling sessions</button>
+    </section>
+
+    <!-- SESSIONS & PRICING -->
+    <section id="sessions" class="screen card">
+      <h2>Anonymous counselling sessions & pricing</h2>
+      <p class="lead">
+        Students can talk to trained psychologists in short micro-sessions. Name, college and phone number
+        remain hidden by default to reduce stigma.
+      </p>
+
+      <div class="grid-2">
+        <div class="mini-card">
+          <h3>₹49 Micro-session (10–15 mins)</h3>
+          <ul>
+            <li>For panic before exams, hostel breakdowns, sudden overwhelm.</li>
+            <li>Chat or audio – student chooses.</li>
+            <li>Available late evenings and exam seasons.</li>
+          </ul>
+          <button class="primary full" onclick="fakeBook()">Book a micro-session</button>
+        </div>
+        <div class="mini-card">
+          <h3>₹99 Deep dive (20–25 mins)</h3>
+          <ul>
+            <li>For repeated failure, family conflict, relationship stress.</li>
+            <li>Structured conversation + homework plan.</li>
+            <li>Therapists earn fair revenue share from each session.</li>
+          </ul>
+          <button class="primary full" onclick="fakeBook()">Book a deep-dive session</button>
+        </div>
+      </div>
+
+      <p class="muted small">
+        *This prototype does not actually take payments or store data. Buttons only show how booking would look in the real app.
+      </p>
+    </section>
+
+    <!-- ANALYTICS / CHART (AI INSIGHTS) -->
+    <section id="analytics" class="screen card">
+      <h2>AI insights for institutes · demo chart</h2>
+      <p class="lead">
+        This chart shows how an institute could see anonymous stress patterns for their batches.
+        No individual student is exposed – only trends.
+      </p>
+
+      <div class="chart">
+        <div class="chart-row">
+          <span>Exam stress</span>
+          <div class="bar">
+            <div class="fill" style="width: 78%"></div>
+          </div>
+          <span class="percent">78%</span>
+        </div>
+        <div class="chart-row">
+          <span>Parental pressure</span>
+          <div class="bar">
+            <div class="fill" style="width: 64%"></div>
+          </div>
+          <span class="percent">64%</span>
+        </div>
+        <div class="chart-row">
+          <span>Hostel loneliness</span>
+          <div class="bar">
+            <div class="fill" style="width: 41%"></div>
+          </div>
+          <span class="percent">41%</span>
+        </div>
+        <div class="chart-row">
+          <span>Burnout risk</span>
+          <div class="bar">
+            <div class="fill" style="width: 52%"></div>
+          </div>
+          <span class="percent">52%</span>
+        </div>
+      </div>
+
+      <p class="muted small">
+        *Numbers here are sample data. In the real system these values would come from aggregated, anonymised
+        mood + issue patterns detected by the AI engine.
+      </p>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="screen card">
+      <h2>About MindEase</h2>
+      <p class="lead">
+        MindEase is a student-first mental health platform focused on Indian realities – NEET attempts,
+        JEE pressure, drop year guilt, hostel loneliness, marriage talks at home and social media comparison.
+      </p>
+      <p>
+        Existing apps are either too expensive or emotionally disconnected. MindEase solves this by:
+      </p>
+      <ul class="checklist">
+        <li>Keeping access anonymous & affordable for students.</li>
+        <li>Combining AI triage with human counsellors – not AI alone.</li>
+        <li>Providing institutes with early-warning dashboards without exposing any individual student.</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="screen card">
+      <h2>Contact & prototype disclaimer</h2>
+      <p>
+        This interface is a working prototype built for the
+        <strong>Hack for Social Cause – Youth Tech Challenge 2026</strong>.
+        It demonstrates the product flow and business model.
+      </p>
+      <p>
+        <strong>Prototype owner:</strong> Gouseia Fatma<br />
+        <strong>Demo email:</strong> mindease.prototype@demo.mail<br />
+        <strong>Use-case:</strong> NEET/JEE & college students · integration with coaching institutes & universities.
+      </p>
+      <p class="muted small">
+        No real counselling, diagnosis or emergency support is being provided through this link.
+        In a production version, all counsellors would be verified psychologists and crisis flows would be added.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    MindEase · Student Mental Health Prototype · 2025
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
