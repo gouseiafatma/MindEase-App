@@ -14,3 +14,12 @@ function moodCheck(level) {
 
   alert(message);
 }
+function connectHumanHelp() {
+  alert(
+    <button onclick="connectHumanHelp()">Human Help</button>
+
+    "SafeHand Crisis Support Activated.\n" +
+    "A trained counsellor would connect here.\n" +
+    "This is a demo for ethical escalation."
+  );
+}
